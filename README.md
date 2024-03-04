@@ -1,4 +1,5 @@
 # Estado Correos
-Con esta API de Correos® España podrás comprobar donde se encuentra tu paquete en cualquier momento.
+Con esta aplicación podras comprobar el estado de tu envio de correos fácilmente.
+
 
 Actualmente en desarrollo.
