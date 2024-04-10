@@ -22,7 +22,7 @@ Navega al directorio del proyecto:
 
 
 ```bash
-cd consulta-envio-correos
+cd correos
 ```
 
 Instala las dependencias del proyecto utilizando npm:
@@ -34,7 +34,7 @@ npm install
  Inicia el servidor Node.js ejecutando el siguiente comando en la terminal:
 
 ```js
-node server.js
+node index.js
 ```
 
  Navega a ``https://localhost:3000``
