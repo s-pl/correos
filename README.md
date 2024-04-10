@@ -15,7 +15,7 @@ Para ejecutar esta aplicación, es necesario tener instalado Node.js en el siste
 Clona este repositorio en tu máquina local:
 
 ```bash
-git clone https://github.com/tu-usuario/consulta-envio-correos.git
+git clone https://github.com/s-pl/correos
 ```
 
 Navega al directorio del proyecto:
