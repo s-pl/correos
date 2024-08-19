@@ -1,82 +1,20 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta el estado de tu envio</title>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
-          body {
-
-            font-family: 'Poppins', sans-serif;
-            background: #F1D302;
-          }
-
-          input[type=text]{
-
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-      }
-          button{
-            background-color:#000000;
-        border-radius:28px;
-        border:1px solid #000000;
-        display:inline-block;
-        cursor:pointer;
-        color:#ffffff;
-        font-family:Arial;
-        font-size:17px;
-        padding:16px 31px;
-        text-decoration:none;
-        text-shadow:0px 1px 0px #000000;
-          }
-    </style>
+    <title>Parcel Tracking</title>
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <div id="container">
-        <center>
-            <h1 id="Cabecera">Consulta el estado de tu envío Correos®</h1>
-            <br>
-        
-            <input type="text" id="codigoenvio" placeholder="Inserta aquí tu código de seguimiento">
-            <br><br>
-            <button onclick="send()">Consultar estado</button>
-            <br><br>
-            <div id="text"></div>
-        </center>
+    <div class="container">
+        <h1 class="title">Seguimiento de Envíos</h1>
+        <form id="trackingForm">
+            <input type="text" id="trackingNumber" placeholder="Ingresa tu código de seguimiento" class="input">
+            <button type="submit" class="button">Buscar</button>
+        </form>
+        <div id="trackingInfo" class="tracking-info"></div>
     </div>
-    <script>
-        function send() {
-            var code = document.getElementById("codigoenvio").value;
-            var div = document.getElementById("text");
-            
-            
-            div.innerHTML = "";
-
-           
-            if (!code.trim()) {
-                div.innerHTML = "<p>Por favor, introduce un código de seguimiento válido.</p>";
-                return;
-            }
-
-           
-            fetch(`/seguimiento?orden=${code}`)
-                .then(response => response.json())
-                .then(data => {
-                    data.forEach(estado => {
-                        div.innerHTML += `<p>${estado.split(",")}</p>`;
-                    });
-                })
-                .catch(error => {
-                    console.error("Error al consultar el estado del envío:", error);
-                    div.innerHTML = "<p>Ocurrió un error al consultar el estado del envío.</p>";
-                });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
