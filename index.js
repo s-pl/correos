@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Ruta para manejar el código de seguimiento
+
 app.get('/:num', async function(req, res) {
     const NumSeguimiento = req.params.num;
 
@@ -40,12 +40,12 @@ app.get('/:num', async function(req, res) {
     }
 });
 
-// Ruta para servir la página principal (index.html)
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Inicia el servidor en el puerto 3000
+
 app.listen(3000, () => {
     console.log("Servidor iniciado en el puerto 3000...");
 });
